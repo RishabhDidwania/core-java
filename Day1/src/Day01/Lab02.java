@@ -34,31 +34,34 @@ public class Lab02 {
     public static void main(String[] args) {
 
         int [] numbers = new int[3];
+        populateNumbers(numbers);
+
+        calculateSquare(numbers);
+        printNumbers("Squaring..",numbers);
+
+        __increment__(numbers);
+        printNumbers("__increment__..", numbers);
+
+        __doubleIt__(numbers);
+        printNumbers("__doubleIt__..",numbers);
+
+    }
+
+    private static void printNumbers(String s, int[] numbers) {
+        System.out.println(s);
+        for (int i : numbers) {
+            System.out.println(i);
+        }
+    }
+
+    private static void populateNumbers(int[] numbers) {
         Scanner scanner = new Scanner(System.in);
-        for(int m = 0 ; m < numbers.length; m++ ){
+        for(int m = 0; m < numbers.length; m++ ){
             System.out.println("Enter number " + (m+1)  );
             numbers[m] = scanner.nextInt();
         }
-
-        System.out.println("Squaring..");
-        calculateSquare(numbers);
-        for(int i:numbers ) {
-           System.out.println(i);
-        }
-
-        System.out.println("__increment__..");
-        __increment__(numbers);
-        for(int i:numbers ) {
-            System.out.println(i);
-        }
-
-        System.out.println("__doubleIt__..");
-        __doubleIt__(numbers);
-        for(int i:numbers ) {
-            System.out.println(i);
-        }
-
     }
+
     static void calculateSquare(int[] arr){
         for(int m = 0 ; m < arr.length; m++ ){
            arr[m] = arr[m] * arr[m];
