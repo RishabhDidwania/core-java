@@ -27,6 +27,7 @@ Enter number III
 Output of [3, 5, 10] ->  20, 52, 202
 ```*/
 
+import java.util.Optional;
 import java.util.Scanner;
 
 public class Lab02 {
@@ -34,6 +35,8 @@ public class Lab02 {
     public static void main(String[] args) {
 
         int [] numbers = new int[3];
+        Optional<String> s = Optional.of("rishabh");
+
         populateNumbers(numbers);
 
         calculateSquare(numbers);
