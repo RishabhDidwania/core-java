@@ -7,6 +7,9 @@ public class Account {
     private long balance;
     private int count = 0;
     private ArrayList<Transaction> transactions;
+    public static final int limit = 3;
+
+    public int getWithdrawlLimit(){return 3;};
 
     public void deposit(long amount) {
         this.balance += amount;
@@ -28,7 +31,7 @@ public class Account {
         if(amount > this.balance){
             System.out.println("Insufficient Balance " + balance);
             throw new RuntimeException("Insufficient Balance");
-        }else if(this.count <= 3){
+        }else if(this.count <= this.getWithdrawlLimit()){
             this.balance -= amount;
             addTransaction("Withdraw", amount);
             System.out.println("Amount " + amount + " is withdrawn from the account" + " and current balance is " +this.balance);
