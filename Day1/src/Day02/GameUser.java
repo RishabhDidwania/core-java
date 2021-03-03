@@ -12,7 +12,7 @@ public class GameUser {
         boolean gameOver = false;
         int guessCount = 0;
         System.out.println("Welcome to the Guessing Game. Enter a number between 1 and 100.");
-        while(gameOver != true){
+        while(!gameOver){
             int returnedMessage = guessingGame.validateInput(scanner.nextInt());
             guessCount+=1;
             if(returnedMessage<0){
